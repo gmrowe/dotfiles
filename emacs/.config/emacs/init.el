@@ -10,7 +10,6 @@
 ;; TODO - Automatic spell-check in text modes
 ;;
 ;; TODO - Look into updating the mode-line with Doom-modeline + all-the-icons
-
 ;;
 ;; TODO - ivy-rich has even more goodies for discoverabilty
 ;;
