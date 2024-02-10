@@ -156,7 +156,8 @@ HOOKS should be an alist of mode hooks in which whitespace should be ignored"
   :config
   (setq simplicity-override-colors-alist
 	'(("simplicity-background" . "#2d3743")
-	  ("simplicity-comment" . "gold")))
+	  ("simplicity-comment" . "#d3e0bc")
+	  ("simplicity-string" . "gold")))
   (load-theme 'simplicity))
 
 ;; ivy: completion mode for multiple modes. Trust me, we really
