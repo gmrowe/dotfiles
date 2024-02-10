@@ -198,3 +198,6 @@ bindsym $mod+Ctrl+n move workspace to output next
 
 # Launch rofi with alt+space
 bindsym Mod1+space exec --no-startup-id rofi -combi-modes "window#run" -combi-hide-mode-prefix -show combi
+
+# clojure-lanterna windows open under class clojure-main
+for_window [class="clojure-main"] floating enable
