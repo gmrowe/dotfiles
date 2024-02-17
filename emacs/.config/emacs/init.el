@@ -215,26 +215,25 @@ HOOKS should be an alist of mode hooks in which whitespace should be ignored"
 (use-package clojure-mode
   :ensure t)
 
-;; smartparens is a drop in replacement for paredit,
-;; trying it for a while to see if it fits me
-(use-package smartparens
+;; Better handling of parenthesis when writing Lisps.
+(use-package paredit
   :ensure t
-
   :hook
-  (clojure-mode . smartparens-strict-mode)
-  (emacs-lisp-mode . smartparens-strict-mode) ; May as well enable for elisp
+  (clojure-mode . enable-paredit-mode)
+  (cider-repl-mode . enable-paredit-mode)
+  (emacs-lisp-mode . enable-paredit-mode)
+  :config
+  (show-paren-mode t)
+  :diminish nil)
 
-  :bind
-  (:map smartparens-mode-map
-	("C-M-f" . sp-forward-sexp)
-	("C-M-b" . sp-backward-sexp)
-	("C-<right>" . sp-forward-slurp-sexp)
-	("C-<left>" . sp-forward-barf-sexp)
-	("C-M-<left>" . sp-backward-slurp-sexp)
-	("C-M-<right>" . sp-backward-barf-sexp)
-	("C-M-k" . sp-kill-sexp)
-	("C-M-w" . sp-copy-sexp)))
 
+;; cider-jack-in starts an nrepl and connects to it from
+;; clojure-mode buffers. Enables lispy goodies such as evaluating
+;; a form in a buffer. There are other, more lightweight
+;; ways to do this for intance, starting a socket repl
+;; and connecting to it from the emacs buffer. May
+;; explore this in the future in furtherance of the goal
+;; of having lightweight tools not prone to breakage.
 (use-package cider
   :ensure t)
 
