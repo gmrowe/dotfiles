@@ -11,8 +11,8 @@ PS1='\u@\h:\w\$ '
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-
 alias wifi='nmtui'
 alias emacs='emacsclient -c -a ""'
+alias open='xdg-open'
 
 . "/home/garrett/.local/share/cargo/env"
