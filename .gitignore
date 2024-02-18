@@ -8,5 +8,6 @@
 **/recentf
 **/smex-items
 **/.bash_history
+**/transient/
 dconf/*
 **/#*
