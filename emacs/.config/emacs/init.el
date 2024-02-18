@@ -211,9 +211,25 @@ HOOKS should be an alist of mode hooks in which whitespace should be ignored"
   (rustic-lsp-setup-p nil "Do not setup lsp mode... for now"))
 
 ;;; Clojure setup
+
+;; clj-kondo is a linter for Clojure code.
+;; flycheck-clj-kondo provides linting for Clojure via the
+;; flycheck package
+;; The [docs] (https://github.com/borkdude/flycheck-clj-kondo)
+;; for flycheck-clj-kondo recommend putting this declaration
+;; before clojure-mode declaration and then `require'ing this
+;; package from the clojure-mode declaration.
+;; (I don't like this, it feels messy and unlike other
+;; requirements. I think this should be able to be done via
+;; a `hook' but that is an experiment for another time)
+(use-package flycheck-clj-kondo
+  :ensure t)
+
 ;; clojure mode
 (use-package clojure-mode
-  :ensure t)
+  :ensure t
+  :config
+  (require 'flycheck-clj-kondo))
 
 ;; Better handling of parenthesis when writing Lisps.
 (use-package paredit
@@ -226,7 +242,6 @@ HOOKS should be an alist of mode hooks in which whitespace should be ignored"
   (show-paren-mode t)
   :diminish nil)
 
-
 ;; cider-jack-in starts an nrepl and connects to it from
 ;; clojure-mode buffers. Enables lispy goodies such as evaluating
 ;; a form in a buffer. There are other, more lightweight
@@ -236,6 +251,13 @@ HOOKS should be an alist of mode hooks in which whitespace should be ignored"
 ;; of having lightweight tools not prone to breakage.
 (use-package cider
   :ensure t)
+
+;; zprint is a source code formatter for Clojure.
+;; zprint-mode formats a buffer when it is saved.
+(use-package zprint-mode
+  :ensure t
+  :hook
+  (clojure-mode . zprint-mode))
 
 (provide 'init)
 ;;; init.el ends here
