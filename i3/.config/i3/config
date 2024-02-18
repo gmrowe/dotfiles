@@ -200,4 +200,8 @@ bindsym $mod+Ctrl+n move workspace to output next
 bindsym Mod1+space exec --no-startup-id rofi -combi-modes "window#run" -combi-hide-mode-prefix -show combi
 
 # clojure-lanterna windows open under class clojure-main
+# we always want these windows to be floating
 for_window [class="clojure-main"] floating enable
+
+# bind PrtSc button to flameshot
+bindsym Print exec --no-startup-id flameshot gui
