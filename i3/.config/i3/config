@@ -234,4 +234,4 @@ bindsym $mod+q mode "$mode_system"
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
-bindsym $mod+minus scratchpad
+bindsym $mod+minus scratchpad show
