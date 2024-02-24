@@ -21,4 +21,7 @@ export XDG_CONFIG_DIRS=/etc/xdg
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 # Define CARGO_HOME in relation to XDG_DATA_HOME
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+# Define GNUPGHOME in relation to XDG_DATA_HOME
+export GNUPGHOME="$XDG_CONFIG_HOME"/gnupg
+
 . "/home/garrett/.local/share/cargo/env"
