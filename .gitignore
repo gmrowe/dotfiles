@@ -7,7 +7,7 @@
 **/*.eld
 **/recentf
 **/smex-items
-**/.bash_history
+**/.bash_history*
 **/transient/
 dconf/*
 **/#*
