@@ -17,11 +17,15 @@ export XDG_STATE_HOME="$HOME"/.local/state
 export XDG_DATA_DIRS=/usr/local/share/:/usr/share/
 export XDG_CONFIG_DIRS=/etc/xdg
 
+# Define the GIT_ASKPASS variable to point to custom script
+export GIT_ASKPASS="$HOME"/scripts/git-retrieve-pat.sh
 # Define RUSTUP_HOME in relation to XDG_DATA_HOME
 export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 # Define CARGO_HOME in relation to XDG_DATA_HOME
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
 # Define GNUPGHOME in relation to XDG_DATA_HOME
-export GNUPGHOME="$XDG_CONFIG_HOME"/gnupg
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+# Define `pass` directory in terms of XDG_DATA_HOME
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 
 . "/home/garrett/.local/share/cargo/env"
