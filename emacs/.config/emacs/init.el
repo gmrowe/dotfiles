@@ -169,6 +169,13 @@ HOOKS should be an alist of mode hooks in which whitespace should be ignored"
   (ivy-use-virtual-buffers t "Buffers are indexes to provide faster search")
   (ivy-count-format "(%d/%d) "))
 
+;; ace-window makes navigating wmacs windows more predicatble
+(use-package ace-window
+  :ensure t
+  :bind
+  ("M-o" . ace-window)
+  ("C-x o" . ace-window))
+
 
 ;; ~~~~~~~~~~~~~ Development specific packages
 
