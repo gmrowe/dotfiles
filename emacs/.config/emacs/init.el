@@ -174,7 +174,9 @@ HOOKS should be an alist of mode hooks in which whitespace should be ignored"
 
 ;; company-mode: text completion for emacs
 (use-package company
-  :ensure t)
+  :ensure t
+  :hook
+  (after-init . global-company-mode))
 
 ;; flycheck-rust: a flycheck extension for configuring flycheck
 ;; automatically for the current cargo project
