@@ -16,4 +16,5 @@ alias emacs='emacsclient -c -a ""'
 alias open='xdg-open'
 alias cat='bat'
 
+# Added by rustup rust install
 . "/home/garrett/.local/share/cargo/env"
