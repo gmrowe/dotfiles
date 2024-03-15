@@ -17,6 +17,9 @@ export XDG_STATE_HOME="$HOME"/.local/state
 export XDG_DATA_DIRS=/usr/local/share/:/usr/share/
 export XDG_CONFIG_DIRS=/etc/xdg
 
+# Use shell version of emacs as my default editor
+export VISUAL='emacsclient -nw'
+
 # Define the GIT_ASKPASS variable to point to custom script
 export GIT_ASKPASS="$HOME"/scripts/git-retrieve-pat.sh
 # Define RUSTUP_HOME in relation to XDG_DATA_HOME
