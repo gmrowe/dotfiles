@@ -14,5 +14,6 @@ alias grep='grep --color=auto'
 alias wifi='nmtui'
 alias emacs='emacsclient -c -a ""'
 alias open='xdg-open'
+alias cat='bat'
 
 . "/home/garrett/.local/share/cargo/env"
