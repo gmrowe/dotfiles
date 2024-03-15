@@ -18,3 +18,9 @@ alias cat='bat'
 
 # Added by rustup rust install
 . "/home/garrett/.local/share/cargo/env"
+
+# Add fzf keybinding scripts
+# The scripts were manually copied to XDG_DATA_HOME from /usr/share/fzf/
+# because I am trying to keep things clean
+. "$XDG_DATA_HOME/fzf/key-bindings.bash"
+. "$XDG_DATA_HOME/fzf/completion.bash"
